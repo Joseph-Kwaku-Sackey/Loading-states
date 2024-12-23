@@ -18,9 +18,10 @@
 }
 
 .sub-container {
+	height: 100dvh;
 	display: flex;
-	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 	z-index: 20;
 }
 
@@ -31,8 +32,8 @@
 	border-width: 11px 7px 10px 25px;
 	border-radius: 50%;
 	animation: loadAnim1 1s infinite;
-	background: linear-gradient(#eeeeff, white);
-	scale: 0.6;
+	background: linear-gradient(#eeeeff, #fff);
+	scale: 0.5;
 }
 
 .sub-container__loading-item2 {
@@ -41,7 +42,7 @@
 	border: 20px dotted var(--load-bg-color);
 	border-radius: 50%;
 	animation: loadAnim2 1s infinite linear;
-	scale: 0.6;
+	scale: 0.5;
 }
 
 .sub-container__load-msg {
@@ -51,11 +52,26 @@
 	font-weight: 500;
 }
 
+.sub-container__svg-container {
+	width: 100px;
+	height: 100px;
+	transform-origin: center;
+	animation: loadAnim1 1s linear infinite;
+}
+
+.sub-container__loading-item3 {
+	fill: none;
+	stroke: var(--load-bg-color);
+	stroke-width: 4px;
+	stroke-linecap: round;
+	stroke-dasharray: 100;
+}
+
 /* animation */
 
 @keyframes loadAnim1 {
 	to {
-		transform: rotate(360deg);
+		rotate: 360deg;
 	}
 }
 
@@ -64,6 +80,6 @@
 		transform: rotate(-360deg);
 	}
 	50% {
-		scale: 0.8;
+		scale: 0.65;
 	}
 }
